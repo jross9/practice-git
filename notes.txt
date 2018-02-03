@@ -218,3 +218,24 @@ $ git push origin jrbranch2
 
 ---- now I have edits on this file in jrbranch2 and jrbranch1 which are going to conflict!
 
+ok I fixed the conflict using the GitHub interface -- need to do it more times and take notes!
+
+now delete jrbranch2 -- on the github fork
+
+$ git push -d origin jrbranch2
+$ git branch -d jrbranch2
+error: The branch 'jrbranch2' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D jrbranch2'.
+$ git branch -D jrbranch2
+Deleted branch jrbranch2 (was 348692e).
+
+now merge jrbranch1 w/ master 
+
+# https://stackoverflow.com/questions/5601931/best-and-safest-way-to-merge-a-git-branch-into-master
+
+$ git checkout master
+$ git pull origin master
+$ git merge jrbranch1
+$ git push origin master
+
+
