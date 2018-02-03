@@ -272,8 +272,18 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 SO this is the fix -- let's see if it works!
 
+Yes that worked ... 
+
+Now to merge master <-- jrbranch1 
+
 $ git checkout master
 $ git pull origin master
 $ git merge jrbranch1
 $ git push origin master
 
+That gave me a clean master & jrbranch1 so that deleting jrbranch1 like this: 
+
+$ git push -d origin jrbranch1
+$ git branch -d jrbranch1
+
+went off w/o hitch!! 
