@@ -209,11 +209,12 @@ these two commands do the trick I think?
 the first creates a local branch the second one pushes back on my fork ... 
 
 $ git checkout -b jrbranch1
-
 $ git push origin jrbranch1
 
 let's try again w/ another branch 
 
-
 $ git checkout -b jrbranch2
 $ git push origin jrbranch2
+
+---- now I have edits on this file in jrbranch2 and jrbranch1 which are going to conflict!
+
