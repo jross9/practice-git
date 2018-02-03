@@ -16,9 +16,9 @@ First I updated my PC to the latest Git installed Git-2.12.2.2-64-bit.exe
 from https://git-scm.com/downloads
 
 ---------------------------------------------------
--- Open a ‘Git Bash' command line prompt
+-- Open a â€˜Git Bash' command line prompt
 ---------------------------------------------------
-right-clicked “practice-git” folder from the explorer | clicked ‘Git Bash Here’
+right-clicked â€œpractice-gitâ€ folder from the explorer | clicked â€˜Git Bash Hereâ€™
 
 jar@Win8 MINGW64 /d/FOS/practice-git (master)
 $
@@ -213,10 +213,24 @@ $ git push origin jrbranch1
 
 let's try again w/ another branch 
 
+
+I even left the notes.txt file modified when I created the branch. 
+
+$ git checkout -b jrbranch2
+$ git push origin jrbranch2
+
+OK ... that worked --> it uploaded my edited notes.txt when it created the branch on the fork.
+
+Now this is where it get's interesting ... edit this note on jrbranch2 and push it ... 
+
+but to push I first need to do ... 
+$ git push --set-upstream origin jrbranch2
 $ git checkout -b jrbranch2
 $ git push origin jrbranch2
 
 ---- now I have edits on this file in jrbranch2 and jrbranch1 which are going to conflict!
+
+in the GitHub conflict screen delete the <<<<< >>>>> markers / edit / click resolve!
 
 ok I fixed the conflict using the GitHub interface -- need to do it more times and take notes!
 
@@ -233,9 +247,33 @@ now merge jrbranch1 w/ master
 
 # https://stackoverflow.com/questions/5601931/best-and-safest-way-to-merge-a-git-branch-into-master
 
+ahhh ... but I forgot to git pull (on jrbranch1 first)
+
+$ git push
+To https://github.com/jross9/practice-git
+ ! [rejected]        jrbranch1 -> jrbranch1 (fetch first)
+error: failed to push some refs to 'https://github.com/jross9/practice-git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+$ git pull
+remote: Counting objects: 13, done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 13 (delta 8), reused 7 (delta 4), pack-reused 0
+Unpacking objects: 100% (13/13), done.
+From https://github.com/jross9/practice-git
+   107756a..aaef6e0  jrbranch1  -> origin/jrbranch1
+Auto-merging notes.txt
+CONFLICT (content): Merge conflict in notes.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+SO this is the fix -- let's see if it works!
+
 $ git checkout master
 $ git pull origin master
 $ git merge jrbranch1
 $ git push origin master
-
 
