@@ -209,7 +209,6 @@ these two commands do the trick I think?
 the first creates a local branch the second one pushes back on my fork ... 
 
 $ git checkout -b jrbranch1
-
 $ git push origin jrbranch1
 
 let's try again w/ another branch 
@@ -218,3 +217,7 @@ I even left the notes.txt file modified when I created the branch.
 
 $ git checkout -b jrbranch2
 $ git push origin jrbranch2
+
+OK ... that worked
+
+Now this is where it get's interesting ... edit this note on jrbranch2 and push it ... 
