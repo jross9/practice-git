@@ -16,9 +16,9 @@ First I updated my PC to the latest Git installed Git-2.12.2.2-64-bit.exe
 from https://git-scm.com/downloads
 
 ---------------------------------------------------
--- Open a ‘Git Bash' command line prompt
+-- Open a â€˜Git Bash' command line prompt
 ---------------------------------------------------
-right-clicked “practice-git” folder from the explorer | clicked ‘Git Bash Here’
+right-clicked â€œpractice-gitâ€ folder from the explorer | clicked â€˜Git Bash Hereâ€™
 
 jar@Win8 MINGW64 /d/FOS/practice-git (master)
 $
@@ -213,8 +213,21 @@ $ git push origin jrbranch1
 
 let's try again w/ another branch 
 
+
+I even left the notes.txt file modified when I created the branch. 
+
+$ git checkout -b jrbranch2
+$ git push origin jrbranch2
+
+OK ... that worked --> it uploaded my edited notes.txt when it created the branch on the fork.
+
+Now this is where it get's interesting ... edit this note on jrbranch2 and push it ... 
+
+but to push I first need to do ... 
+$ git push --set-upstream origin jrbranch2
 $ git checkout -b jrbranch2
 $ git push origin jrbranch2
 
 ---- now I have edits on this file in jrbranch2 and jrbranch1 which are going to conflict!
 
+in the GitHub conflict screen delete the <<<<< >>>>> markers / edit / click resolve!
