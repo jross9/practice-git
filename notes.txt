@@ -214,6 +214,7 @@ $ git push origin jrbranch1
 
 let's try again w/ another branch 
 
+I even left the notes.txt file modified when I created the branch. 
 
 $ git checkout -b jrbranch2
 $ git push origin jrbranch2
