@@ -218,6 +218,10 @@ I even left the notes.txt file modified when I created the branch.
 $ git checkout -b jrbranch2
 $ git push origin jrbranch2
 
-OK ... that worked
+OK ... that worked --> it uploaded my edited notes.txt when it created the branch on the fork.
 
 Now this is where it get's interesting ... edit this note on jrbranch2 and push it ... 
+
+but to push I need to do ... 
+
+$ git push --set-upstream origin jrbranch2
